@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { TextField } from '@material-ui/core';
+import useInputChange from "../../../hooks/useInputChange";
 
 const Inputs = [
     {
@@ -17,12 +18,8 @@ const Inputs = [
 ];
 
 const InputsScreen1 = () => {
-    const [inputValues, setInputValues] = useState({});
+    const { inputValues, onInputChange } = useInputChange();
 
-    const onInputChange = (event) => setInputValues({
-        ...inputValues,
-        [event.target.name]: event.target.value
-    });
 
     return (
         <div>
